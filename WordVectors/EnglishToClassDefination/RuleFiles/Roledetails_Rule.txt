@@ -1,0 +1,18 @@
+﻿• Identify DeveloperRole IF the input explicitly states:
+   – "Full stack" → set IsFullStack = true  
+   – OR "Backend only" / "Frontend only" → set IsFullStack = false  
+   – AND extract any mentioned programming language as PrimaryLanguage
+     Example mappings:
+        "Java developer" → PrimaryLanguage = "Java"
+        "works in C#" → PrimaryLanguage = "C#"
+        "Full stack developer uses Java" → 
+             IsFullStack = true, PrimaryLanguage = "Java"
+
+• Identify ManagerRole ONLY IF:
+   – A numeric team size is stated
+     (e.g., “manages 4 people” → TeamSize = 4)
+
+• If a role type does NOT meet its rule conditions:
+   → Set RoleDetails = null
+
+• Never hallucinate missing values for required fields.
